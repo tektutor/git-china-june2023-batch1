@@ -370,3 +370,33 @@ core.editor=vim
 http.proxy=https://your-proxy-server:8080
 jegan@tektutor.org:~/git-demo$ git config --global http.proxy https://user-name:password@your-proxy-server:8080
 </pre>
+
+
+## Finding current status of your local git repo
+```
+git status
+touch cars.txt
+ls -l
+cd ~/git-demo
+git status
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ touch cars.txt
+
+jegan@tektutor.org:~/git-demo$ ls -l
+total 0
+-rw-rw-r-- 1 jegan jegan 0 Jun 19 12:46 cars.txt
+
+jegan@tektutor.org:~/git-demo$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	cars.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+</pre>

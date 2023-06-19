@@ -18,6 +18,13 @@ sudo yum install -y epel-release && sudo yum -y install git
 sudo dnf install git
 ```
 
+## How to clone this repository from Git Bash CLI ?
+```
+cd ~
+git clone https://github.com/tektutor/git-china-june2023-batch1.git
+cd git-china-june2023-batch1
+```
+
 ## 📎 What is a Git repository ?
 
 ## 📎 What is a Version Control System (VCS) ?

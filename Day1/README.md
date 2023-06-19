@@ -464,3 +464,55 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 	new file:   cars.txt
 </pre>
+
+
+## Committing your changes to your local git repo
+```
+git add cars.txt
+git status
+echo "Skoda Kodiaq" > cars.txt
+git status
+git commit -m "Created a cars.txt file."
+git add cars.txt
+git commit -m "Added Skoda Kodiaq in the cars file"
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ echo "Skoda Kodiaq" > cars.txt
+jegan@tektutor.org:~/git-demo$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   cars.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   cars.txt
+
+jegan@tektutor.org:~/git-demo$ git commit -m "Created a cars.txt file."
+[master (root-commit) f3eaa5d] Created a cars.txt file.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cars.txt
+jegan@tektutor.org:~/git-demo$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   cars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jegan@tektutor.org:~/git-demo$ cat cars.txt 
+Skoda Kodiaq
+jegan@tektutor.org:~/git-demo$ git add cars.txt 
+jegan@tektutor.org:~/git-demo$ git commit -m "Added Skoda Kodiaq in the cars file"
+[master fa112d5] Added Skoda Kodiaq in the cars file
+ 1 file changed, 1 insertion(+)
+jegan@tektutor.org:~/git-demo$ git status
+On branch master
+nothing to commit, working tree clean	
+</pre>

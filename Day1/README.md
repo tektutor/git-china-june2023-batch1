@@ -230,3 +230,24 @@ core.filemode=true
 core.bare=false
 core.logallrefupdates=true
 </pre>
+
+## Configuring your preferred editor in local git environment
+```
+git config --global core.editor "vim"
+git config --list
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git config --global core.editor "vim"
+jegan@tektutor.org:~/git-demo$ git config --list
+credential.helper=cache --timeout=9999999999
+user.name=Jeganathan Swaminathan
+user.email=mail2jegan@gmail.com
+pull.rebase=false
+core.editor=vim
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+</pre>

@@ -400,3 +400,63 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 </pre>
+
+## Staging our changes in our local git repo
+```
+git add cars.txt
+git status
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git add cars.txt 
+
+jegan@tektutor.org:~/git-demo$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   cars.txt
+  </pre>
+
+## Removing files from the staging are 
+```
+git rm --cached cars.txt
+git status
+```
+
+<pre>
+jegan@tektutor.org:~/git-demo$ git rm --cached cars.txt 
+rm 'cars.txt'
+
+jegan@tektutor.org:~/git-demo$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	cars.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+</pre>
+
+## Staging multiple files in our local git repo
+```
+git add *
+git status
+```
+   
+jegan@tektutor.org:~/git-demo$ git add *
+
+jegan@tektutor.org:~/git-demo$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   cars.txt
+</pre>

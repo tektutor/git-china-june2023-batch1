@@ -17,3 +17,32 @@ sudo apt install git
 sudo yum install -y epel-release && sudo yum -y install git
 sudo dnf install git
 ```
+
+## What is a Git repository ?
+
+## What is a Version Control System (VCS) ?
+
+## What is a Local Version Control System (LVCS) ?
+
+## What is a Centralized Version Control System (CVCS) ?
+
+## What is a Distributed Version Control System (DVCS) ?
+
+## Pros and Cons of LVCS
+
+#### Advantages
+
+#### Disadvantages
+
+
+## Pros and Cons of CVCS
+
+#### Advantages
+
+#### Disadvantages
+
+## Pros and Cons of DVCS
+
+#### Advantages
+
+#### Disadvantages

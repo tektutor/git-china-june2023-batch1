@@ -105,3 +105,13 @@ Expected output
 jegan@tektutor.org:~$ <b>git --version</b>
 git version 2.34.1
 </pre>
+
+
+## Creating a local empty git repository
+```
+cd ~
+mkdir git-demo
+cd git-demo
+
+git init
+```

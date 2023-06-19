@@ -1,4 +1,4 @@
-# Git Training June 2023 - China Batch1
+# Git Basics Training ( June 2023 - China Batch1 )
 
 ## My LinkedIn Profile
 https://www.linkedin.com/in/jeganathan-swaminathan-2a6a6a6/

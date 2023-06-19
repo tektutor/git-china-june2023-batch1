@@ -1,52 +1,50 @@
 # Day 1
 
-## Installing Git in Windows
+## 📌 Installing Git in Windows
 <pre>
 https://gitforwindows.org/
 </pre>
 
-## Installing Git in Ubuntu Linux Distribution
+## 📌 Installing Git in Ubuntu Linux Distribution
 <pre>
 sudo add-apt-repository ppa:git-core/ppa 
 sudo apt update
 sudo apt install git
 </pre>
 
-## Installing Git in RedHat Family Linux Distributions
+## 📌 Installing Git in RedHat Family Linux Distributions
 ```
 sudo yum install -y epel-release && sudo yum -y install git
 sudo dnf install git
 ```
 
-## What is a Git repository ?
+## 📎 What is a Git repository ?
 
-## What is a Version Control System (VCS) ?
+## 📎 What is a Version Control System (VCS) ?
 
-## What is a Local Version Control System (LVCS) ?
+## 📎 What is a Local Version Control System (LVCS) ?
 
-## What is a Centralized Version Control System (CVCS) ?
+## 📎 What is a Centralized Version Control System (CVCS) ?
 
-## What is a Distributed Version Control System (DVCS) ?
+## 📎 What is a Distributed Version Control System (DVCS) ?
 
-## Pros and Cons of LVCS
-
-#### Advantages
-
-#### Disadvantages
-
-
-## Pros and Cons of CVCS
-
-#### Advantages
-
-#### Disadvantages
-
-## Pros and Cons of DVCS
+## 📎 Pros and Cons of LVCS
 
 #### Advantages
 
 #### Disadvantages
 
 
-## What is Git Bash ?
+## 📎 Pros and Cons of CVCS
 
+#### Advantages
+
+#### Disadvantages
+
+## 📎 Pros and Cons of DVCS
+
+#### Advantages
+
+#### Disadvantages
+
+## 📎 What is Git Bash ?

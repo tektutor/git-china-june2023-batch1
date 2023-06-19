@@ -183,3 +183,17 @@ jegan@tektutor.org:~/git-demo$ tree .git
 
 9 directories, 17 files
 </pre>
+
+
+## Configuring your local Git
+
+The configuration changes can be stored in 3 differents levels
+1. System wide ( the config changes are applied for all users in the OS )
+2. Global - the config changes are applied for all code repositories a particular user is working on
+3. Local - the config changes are applied to a particular code repository used by a single user
+
+Let's perform some basic configuration on the global level
+```
+git config --global user.name "Jeganathan Swaminathan"
+git config --global user.email "mail2jegan@gmail.com"
+```

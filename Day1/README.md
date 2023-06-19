@@ -448,7 +448,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 git add *
 git status
 ```
-   
+
+Expected output
+<pre>
 jegan@tektutor.org:~/git-demo$ git add *
 
 jegan@tektutor.org:~/git-demo$ git status

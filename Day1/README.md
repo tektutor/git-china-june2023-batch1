@@ -115,3 +115,71 @@ cd git-demo
 
 git init
 ```
+
+Expected output
+<pre>
+jegan@tektutor.org:~$ cd ~
+jegan@tektutor.org:~$ pwd
+/home/jegan
+jegan@tektutor.org:~$ mkdir git-demo
+jegan@tektutor.org:~$ ls
+Documents           Templates
+Downloads           Videos
+<b>git-demo</b>     Pictures
+Public
+Desktop              Music
+jegan@tektutor.org:~$ cd git-demo/
+jegan@tektutor.org:~/git-demo$ ls
+jegan@tektutor.org:~/git-demo$ ls -lha
+total 8.0K
+drwxrwxr-x  2 jegan jegan 4.0K Jun 19 11:35 .
+drwxr-x--- 38 jegan jegan 4.0K Jun 19 11:35 ..
+jegan@tektutor.org:~/git-demo$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/jegan/git-demo/.git/
+jegan@tektutor.org:~/git-demo$ ls
+jegan@tektutor.org:~/git-demo$ ls -lha
+total 12K
+drwxrwxr-x  3 jegan jegan 4.0K Jun 19 11:36 .
+drwxr-x--- 38 jegan jegan 4.0K Jun 19 11:35 ..
+drwxrwxr-x  7 jegan jegan 4.0K Jun 19 11:36 .git
+jegan@tektutor.org:~/git-demo$ tree .git
+.git
+├── branches
+├── config
+├── description
+├── HEAD
+├── hooks
+│   ├── applypatch-msg.sample
+│   ├── commit-msg.sample
+│   ├── fsmonitor-watchman.sample
+│   ├── post-update.sample
+│   ├── pre-applypatch.sample
+│   ├── pre-commit.sample
+│   ├── pre-merge-commit.sample
+│   ├── prepare-commit-msg.sample
+│   ├── pre-push.sample
+│   ├── pre-rebase.sample
+│   ├── pre-receive.sample
+│   ├── push-to-checkout.sample
+│   └── update.sample
+├── info
+│   └── exclude
+├── objects
+│   ├── info
+│   └── pack
+└── refs
+    ├── heads
+    └── tags
+
+9 directories, 17 files
+</pre>

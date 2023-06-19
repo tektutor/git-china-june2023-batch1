@@ -402,6 +402,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 </pre>
 
 ## Staging our changes in our local git repo
+Any modifications that we do on file(s) must be staged first, before we could commit them.  This is called 2 stage commit. The change could be new-file, file that you deleted, a file that your modified, etc.,  Staging is mandatory even if the file is already committed to the repo but you have modified it recently.
+
 ```
 git add cars.txt
 git status

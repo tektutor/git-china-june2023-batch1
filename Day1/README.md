@@ -87,3 +87,17 @@ cd git-china-june2023-batch1
 #### Disadvantages
 
 ## 📎 What is Git Bash ?
+
+
+# Git Commands ( Try these commands on your Git Bash )
+
+## Checking Git tool version
+```
+git --version
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~$ <b>git --version</b>
+git version 2.34.1
+</pre>

@@ -516,3 +516,24 @@ jegan@tektutor.org:~/git-demo$ git status
 On branch master
 nothing to commit, working tree clean	
 </pre>
+
+## Checking logs
+```
+git log
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git log
+commit fa112d571b6fdee79bb19d0243f787d70e444dd7 (HEAD -> master)
+Author: Jeganathan Swaminathan <mail2jegan@gmail.com>
+Date:   Mon Jun 19 13:08:29 2023 +0530
+
+    Added Skoda Kodiaq in the cars file
+
+commit f3eaa5d96869758480b1b6054bd443d8adf0ef15
+Author: Jeganathan Swaminathan <mail2jegan@gmail.com>
+Date:   Mon Jun 19 13:07:22 2023 +0530
+
+    Created a cars.txt file.	
+</pre>

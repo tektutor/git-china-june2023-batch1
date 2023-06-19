@@ -26,6 +26,10 @@ cd git-china-june2023-batch1
 ```
 
 ## 📎 What is a Git repository ?
+- a folder that is being tracked by your Git server
+- it is a version controlled folder
+- Git tracks all changes done to files/folder within the repository
+- the history/version of changes done to files/folders within the repository are tracked by Git
 
 ## 📎 What is a Version Control System (VCS) ?
 

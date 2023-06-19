@@ -252,7 +252,11 @@ core.logallrefupdates=true
 </pre>
 
 ## Removing global configurations
+The global git configurations are stored under user home .gitconfig file
+
 ```
+git config --unset --global user.email
+git config --unset --global user.name
 ```
 
 Expected output

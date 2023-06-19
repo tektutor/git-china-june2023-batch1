@@ -239,7 +239,6 @@ git config --list
 
 Expected output
 <pre>
-jegan@tektutor.org:~/git-demo$ git config --global core.editor "vim"
 jegan@tektutor.org:~/git-demo$ git config --list
 credential.helper=cache --timeout=9999999999
 user.name=Jeganathan Swaminathan
@@ -250,4 +249,100 @@ core.repositoryformatversion=0
 core.filemode=true
 core.bare=false
 core.logallrefupdates=true
+</pre>
+
+## Removing global configurations
+```
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git config --list
+credential.helper=cache --timeout=9999999999
+user.email=mail2jegan@gmail.com
+pull.rebase=false
+core.editor=vim
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+
+jegan@tektutor.org:~/git-demo$ git config --unset --global user.email
+jegan@tektutor.org:~/git-demo$ git config --list
+credential.helper=cache --timeout=9999999999
+pull.rebase=false
+core.editor=vim
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+</pre>
+
+## Saving the git config details on the local scope. These config changes are only applied to a single git repo
+
+The local git configurations are stored within in the local git repo folder at the below path
+./git/config
+
+```
+git config --local user.name "Jeganathan Swaminathan"
+git config --local user.email "mail2jegan@gmail.com"
+git config --local -l
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git config --local user.name "Jeganathan Swaminathan"
+jegan@tektutor.org:~/git-demo$ git config --local user.email "mail2jegan@gmail.com"
+
+jegan@tektutor.org:~/git-demo$ git config --local -l
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+user.name=Jeganathan Swaminathan
+user.email=mail2jegan@gmail.com
+jegan@tektutor.org:~/git-demo$ ls -lha
+total 12K
+drwxrwxr-x  3 jegan jegan 4.0K Jun 19 11:36 .
+drwxr-x--- 38 jegan jegan 4.0K Jun 19 12:17 ..
+drwxrwxr-x  7 jegan jegan 4.0K Jun 19 12:17 .git
+jegan@tektutor.org:~/git-demo$ tree .git
+.git
+├── branches
+├── config
+├── description
+├── HEAD
+├── hooks
+│   ├── applypatch-msg.sample
+│   ├── commit-msg.sample
+│   ├── fsmonitor-watchman.sample
+│   ├── post-update.sample
+│   ├── pre-applypatch.sample
+│   ├── pre-commit.sample
+│   ├── pre-merge-commit.sample
+│   ├── prepare-commit-msg.sample
+│   ├── pre-push.sample
+│   ├── pre-rebase.sample
+│   ├── pre-receive.sample
+│   ├── push-to-checkout.sample
+│   └── update.sample
+├── info
+│   └── exclude
+├── objects
+│   ├── info
+│   └── pack
+└── refs
+    ├── heads
+    └── tags
+
+9 directories, 17 files
+jegan@tektutor.org:~/git-demo$ cat .git/config
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[user]
+	name = Jeganathan Swaminathan
+	email = mail2jegan@gmail.com
 </pre>

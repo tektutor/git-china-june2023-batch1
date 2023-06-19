@@ -197,3 +197,36 @@ Let's perform some basic configuration on the global level
 git config --global user.name "Jeganathan Swaminathan"
 git config --global user.email "mail2jegan@gmail.com"
 ```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ <b>git status</b>
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+jegan@tektutor.org:~/git-demo$ git config --global user.name "Jeganathan Swaminathan"
+jegan@tektutor.org:~/git-demo$ git config --global user.email "maiegan@gmail.com"
+
+  jegan@tektutor.org:~/git-demo$ git config --list
+credential.helper=cache --timeout=9999999999
+user.name=Jeganathan Swaminathan
+user.email=maiegan@gmail.com
+pull.rebase=false
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+
+jegan@tektutor.org:~/git-demo$ git config --global user.email "mail2jegan@gmail.com"
+jegan@tektutor.org:~/git-demo$ git config --list
+credential.helper=cache --timeout=9999999999
+user.name=Jeganathan Swaminathan
+user.email=mail2jegan@gmail.com
+pull.rebase=false
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+</pre>

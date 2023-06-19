@@ -209,7 +209,7 @@ nothing to commit (create/copy files and use "git add" to track)
 jegan@tektutor.org:~/git-demo$ git config --global user.name "Jeganathan Swaminathan"
 jegan@tektutor.org:~/git-demo$ git config --global user.email "maiegan@gmail.com"
 
-  jegan@tektutor.org:~/git-demo$ git config --list
+jegan@tektutor.org:~/git-demo$ git config --list
 credential.helper=cache --timeout=9999999999
 user.name=Jeganathan Swaminathan
 user.email=maiegan@gmail.com

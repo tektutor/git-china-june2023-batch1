@@ -421,7 +421,7 @@ Changes to be committed:
 	new file:   cars.txt
   </pre>
 
-## Removing files from the staging are 
+## Removing files from the staging area
 ```
 git rm --cached cars.txt
 git status

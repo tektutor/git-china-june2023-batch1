@@ -351,7 +351,7 @@ jegan@tektutor.org:~/git-demo$ cat .git/config
 	email = mail2jegan@gmail.com
 </pre>
 
-## Configuring your git in case you are behing proxy server
+## Configuring your git in case you are behind proxy server
 ```
 git config --global http.proxy https://your-proxy-server:8080
 git config --global http.proxy https://user-name:password@your-proxy-server:8080

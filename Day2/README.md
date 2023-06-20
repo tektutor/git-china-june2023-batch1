@@ -177,8 +177,26 @@ a9d2c51 Deleted file2.txt from local repo.
 </pre>
 
 ## If you wish to modify the recent commit comment or missed to commit some additional files part the commit but would like to add those changes in the same commit
+Create a new git local repo
+```
+cd ~/git-demo
+rm -rf .git
+rm *
+
+git init
+touch cars.txt
+git add .
+git commit -m "Initial commit"
+
+echo "BMW X2" > cars.txt
+git commit -am "Added BWX X12" #Notice there is a typos in the commit message
+git log --oneline --decorate
+```
+
+Now let's try to correct the commit message using an amend
 ```
 git commit --amend
+git log --oneline --decorate
 ```
 
 Expected output

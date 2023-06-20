@@ -103,6 +103,9 @@ cat cars.txt
 ```
 
 ## ⛹️‍♂️ Lab - Restore changes done in the recent commit
+
+Git restores requires an additional commit.
+
 Assume the cars.txt file has just the below entries
 <pre>
 BMW X3

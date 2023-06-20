@@ -24,6 +24,8 @@ git log --pretty=format:"%h %s" --graph
 git log --since=2.weeks
 git log --path path-of-the-file
 git log --oneline --decorate
+
+git log --pretty="%h - %s" --author="Jeganathan Swaminathan" --since="2023-06-18" --before="2023-06-21"
 ```
 
 The possible specifiers

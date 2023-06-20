@@ -89,3 +89,89 @@ git config --global core.autocrlf true
 ```
 
 The above configuration ensures the same control characters used in Windows machines so that the other unix/linux/mac users won't see conflicting formatting characters. This should help avoid the CRLF warning that windows users might get.
+
+## Discard changes done in the working directory on a unstaged file
+
+Modify the cars.txt but dont' stage it before you try the restore
+```
+echo "Mahindra Bolerao" > cars.txt
+cat cars.txt
+git status
+git restore cars.txt
+git status
+cat cars.txt
+```
+
+## Restore changes done in the recent commit
+Assume the cars.txt file has just the below entries
+<pre>
+BMW X3
+Audi A6
+</pre>
+
+```
+echo "Mahindra XUV" > cars.txt
+cat cars.txt
+git status
+git commit -am "Added Mahindra XUV"
+git status
+git log --oneline --decorate
+git restore --source c0e1f22 cars.txt
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git log --oneline --decorate
+f63cb89 (HEAD -> main) Added Mahindra Bolero
+c0e1f22 Undone the changes made to cars.txt
+8f3f7d8 Removed Audi Q7
+61e2f52 Added Audi Q7
+e0ce153 Added BMW X3
+a9d2c51 Deleted file2.txt from local repo.
+43de063 Initial commit.
+jegan@tektutor.org:~/git-demo$ git restore --source c0e1f22 cars.txt
+jegan@tektutor.org:~/git-demo$ ls
+cars.txt  file2.txt  file3.txt
+jegan@tektutor.org:~/git-demo$ cat cars.txt 
+BMW X3
+Audi A6
+
+jegan@tektutor.org:~/git-demo$ git log --oneline --decorate
+f63cb89 (HEAD -> main) Added Mahindra Bolero
+c0e1f22 Undone the changes made to cars.txt
+8f3f7d8 Removed Audi Q7
+61e2f52 Added Audi Q7
+e0ce153 Added BMW X3
+a9d2c51 Deleted file2.txt from local repo.
+43de063 Initial commit.
+jegan@tektutor.org:~/git-demo$ ls
+cars.txt  file2.txt  file3.txt
+jegan@tektutor.org:~/git-demo$ cat cars.txt 
+BMW X3
+Audi A6
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   cars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+jegan@tektutor.org:~/git-demo$ git commit -am "Reverted or removed the Mahendra Bolero from cars.txt"
+[main 5961c98] Reverted or removed the Mahendra Bolero from cars.txt
+ 1 file changed, 1 deletion(-)
+
+jegan@tektutor.org:~/git-demo$ git log --oneline --decorate
+5961c98 (HEAD -> main) Reverted or removed the Mahendra Bolero from cars.txt
+f63cb89 Added Mahindra Bolero
+c0e1f22 Undone the changes made to cars.txt
+8f3f7d8 Removed Audi Q7
+61e2f52 Added Audi Q7
+e0ce153 Added BMW X3
+a9d2c51 Deleted file2.txt from local repo.
+43de063 Initial commit.
+</pre>
+
+
+

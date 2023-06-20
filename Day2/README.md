@@ -176,5 +176,23 @@ a9d2c51 Deleted file2.txt from local repo.
 43de063 Initial commit.
 </pre>
 
+## If you wish to modify the recent commit comment or missed to commit some additional files part the commit but would like to add those changes in the same commit
+```
+git commit --amend
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git commit --amend
+[main d68ef7e] Added BMW X3
+ Date: Tue Jun 20 13:12:58 2023 +0530
+ 1 file changed, 1 insertion(+)
+
+jegan@tektutor.org:~/git-demo$ git log --oneline --decorate
+d68ef7e (HEAD -> main) Added BMW X3
+88f39c4 Added BMW X2
+73cb3ee Added BMW X1
+32187fd Initial commit
+</pre>
 
 

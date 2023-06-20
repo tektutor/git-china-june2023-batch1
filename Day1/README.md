@@ -95,7 +95,7 @@ cd git-china-june2023-batch1
 
 # Git Commands ( Try these commands on your Git Bash )
 
-## Lab - Checking Git tool version
+## ⛹️ Lab - Checking Git tool version
 ```
 git --version
 ```
@@ -107,7 +107,7 @@ git version 2.34.1
 </pre>
 
 
-## Lab - Creating a local empty git repository
+## ⛹️ Lab - Creating a local empty git repository
 ```
 cd ~
 mkdir git-demo
@@ -282,7 +282,7 @@ core.bare=false
 core.logallrefupdates=true
 </pre>
 
-## Lab - Saving the git config details on the local scope. These config changes are only applied to a single git repo
+## ⛹️ Lab - Saving the git config details on the local scope. These config changes are only applied to a single git repo
 
 The local git configurations are stored within in the local git repo folder at the below path
 ./git/config

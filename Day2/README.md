@@ -1,6 +1,6 @@
 # Day 2
 
-## Removing a file from staging are but retain in the working directory
+## Removing a file from staging area but retain in the working directory
 ```
 git rm --cached file2.txt
 ```

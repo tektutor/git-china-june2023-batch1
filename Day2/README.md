@@ -201,16 +201,7 @@ git log --oneline --decorate
 
 Expected output
 <pre>
-jegan@tektutor.org:~/git-demo$ git commit --amend
-[main d68ef7e] Added BMW X3
- Date: Tue Jun 20 13:12:58 2023 +0530
- 1 file changed, 1 insertion(+)
-
-jegan@tektutor.org:~/git-demo$ git log --oneline --decorate
-d68ef7e (HEAD -> main) Added BMW X3
-88f39c4 Added BMW X2
-73cb3ee Added BMW X1
-32187fd Initial commit
+	
 </pre>
 
 

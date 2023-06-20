@@ -95,7 +95,7 @@ cd git-china-june2023-batch1
 
 # Git Commands ( Try these commands on your Git Bash )
 
-## Checking Git tool version
+## Lab - Checking Git tool version
 ```
 git --version
 ```
@@ -107,7 +107,7 @@ git version 2.34.1
 </pre>
 
 
-## Creating a local empty git repository
+## Lab - Creating a local empty git repository
 ```
 cd ~
 mkdir git-demo
@@ -185,7 +185,7 @@ jegan@tektutor.org:~/git-demo$ tree .git
 </pre>
 
 
-## Configuring your local Git
+## Lab - Configuring your local Git
 
 The configuration changes can be stored in 3 differents levels
 1. System wide ( the config changes are applied for all users in the OS )
@@ -231,7 +231,7 @@ core.bare=false
 core.logallrefupdates=true
 </pre>
 
-## Configuring your preferred editor in local git environment
+## Lab - Configuring your preferred editor in local git environment
 ```
 git config --global core.editor "vim"
 git config --list
@@ -282,7 +282,7 @@ core.bare=false
 core.logallrefupdates=true
 </pre>
 
-## Saving the git config details on the local scope. These config changes are only applied to a single git repo
+## Lab - Saving the git config details on the local scope. These config changes are only applied to a single git repo
 
 The local git configurations are stored within in the local git repo folder at the below path
 ./git/config
@@ -351,7 +351,7 @@ jegan@tektutor.org:~/git-demo$ cat .git/config
 	email = mail2jegan@gmail.com
 </pre>
 
-## Configuring your git in case you are behind proxy server
+## Lab - Configuring your git in case you are behind proxy server
 ```
 git config --global http.proxy https://your-proxy-server:8080
 git config --global http.proxy https://user-name:password@your-proxy-server:8080
@@ -372,7 +372,7 @@ jegan@tektutor.org:~/git-demo$ git config --global http.proxy https://user-name:
 </pre>
 
 
-## Finding current status of your local git repo
+## Lab - Finding current status of your local git repo
 ```
 git status
 touch cars.txt
@@ -401,7 +401,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 </pre>
 
-## Staging our changes in our local git repo
+## Lab - Staging our changes in our local git repo
 Any modifications that we do on file(s) must be staged first, before we could commit them.  This is called 2 stage commit. The change could be new-file, file that you deleted, a file that your modified, etc.,  Staging is mandatory even if the file is already committed to the repo but you have modified it recently.
 
 ```
@@ -423,7 +423,7 @@ Changes to be committed:
 	new file:   cars.txt
   </pre>
 
-## Removing files from the staging area
+## Lab - Removing files from the staging area
 ```
 git rm --cached cars.txt
 git status
@@ -445,7 +445,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 </pre>
 
-## Staging multiple files in our local git repo
+## Lab - Staging multiple files in our local git repo
 ```
 git add *
 git status
@@ -466,7 +466,7 @@ Changes to be committed:
 </pre>
 
 
-## Committing your changes to your local git repo
+## Lab - Committing your changes to your local git repo
 ```
 git add cars.txt
 git status
@@ -517,7 +517,7 @@ On branch master
 nothing to commit, working tree clean	
 </pre>
 
-## Checking logs
+## Lab - Checking logs
 ```
 git log
 ```

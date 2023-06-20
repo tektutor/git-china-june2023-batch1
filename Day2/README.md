@@ -82,3 +82,10 @@ index dffa255..c2af84c 100644
  BMW X3
 +Audi A6
 </pre>
+
+## Lab - Recommended configuration on Windows machines
+```
+git config --global core.autocrlf true
+```
+
+The above configuration ensures the same control characters used in Windows machines so that the other unix/linux/mac users won't see conflicting formatting characters. This should help avoid the CRLF warning that windows users might get.

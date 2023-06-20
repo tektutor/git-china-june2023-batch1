@@ -90,7 +90,7 @@ git config --global core.autocrlf true
 
 The above configuration ensures the same control characters used in Windows machines so that the other unix/linux/mac users won't see conflicting formatting characters. This should help avoid the CRLF warning that windows users might get.
 
-## Discard changes done in the working directory on a unstaged file
+## ⛹️‍♂️ Lab - Discard changes done in the working directory on a unstaged file
 
 Modify the cars.txt but dont' stage it before you try the restore
 ```
@@ -102,7 +102,7 @@ git status
 cat cars.txt
 ```
 
-## Restore changes done in the recent commit
+## ⛹️‍♂️ Lab - Restore changes done in the recent commit
 Assume the cars.txt file has just the below entries
 <pre>
 BMW X3

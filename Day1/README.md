@@ -185,7 +185,7 @@ jegan@tektutor.org:~/git-demo$ tree .git
 </pre>
 
 
-## Lab - Configuring your local Git
+## ⛹️ Lab - Configuring your local Git
 
 The configuration changes can be stored in 3 differents levels
 1. System wide ( the config changes are applied for all users in the OS )
@@ -231,7 +231,7 @@ core.bare=false
 core.logallrefupdates=true
 </pre>
 
-## Lab - Configuring your preferred editor in local git environment
+## ⛹️ Lab - Configuring your preferred editor in local git environment
 ```
 git config --global core.editor "vim"
 git config --list
@@ -251,7 +251,7 @@ core.bare=false
 core.logallrefupdates=true
 </pre>
 
-## Removing global configurations
+## ⛹️ Removing global configurations
 The global git configurations are stored under user home .gitconfig file
 
 ```
@@ -351,7 +351,7 @@ jegan@tektutor.org:~/git-demo$ cat .git/config
 	email = mail2jegan@gmail.com
 </pre>
 
-## Lab - Configuring your git in case you are behind proxy server
+## ⛹️ Lab - Configuring your git in case you are behind proxy server
 ```
 git config --global http.proxy https://your-proxy-server:8080
 git config --global http.proxy https://user-name:password@your-proxy-server:8080
@@ -372,7 +372,7 @@ jegan@tektutor.org:~/git-demo$ git config --global http.proxy https://user-name:
 </pre>
 
 
-## Lab - Finding current status of your local git repo
+## ⛹️ Lab - Finding current status of your local git repo
 ```
 git status
 touch cars.txt
@@ -401,7 +401,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 </pre>
 
-## Lab - Staging our changes in our local git repo
+## ⛹️ Lab - Staging our changes in our local git repo
 Any modifications that we do on file(s) must be staged first, before we could commit them.  This is called 2 stage commit. The change could be new-file, file that you deleted, a file that your modified, etc.,  Staging is mandatory even if the file is already committed to the repo but you have modified it recently.
 
 ```
@@ -423,7 +423,7 @@ Changes to be committed:
 	new file:   cars.txt
   </pre>
 
-## Lab - Removing files from the staging area
+## ⛹️ Lab - Removing files from the staging area
 ```
 git rm --cached cars.txt
 git status
@@ -445,7 +445,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 </pre>
 
-## Lab - Staging multiple files in our local git repo
+## ⛹️ Lab - Staging multiple files in our local git repo
 ```
 git add *
 git status
@@ -466,7 +466,7 @@ Changes to be committed:
 </pre>
 
 
-## Lab - Committing your changes to your local git repo
+## ⛹️ Lab - Committing your changes to your local git repo
 ```
 git add cars.txt
 git status
@@ -517,7 +517,7 @@ On branch master
 nothing to commit, working tree clean	
 </pre>
 
-## Lab - Checking logs
+## ⛹️ Lab - Checking logs
 ```
 git log
 ```

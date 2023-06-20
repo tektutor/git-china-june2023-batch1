@@ -36,3 +36,49 @@ The possible specifiers
 %ae - author email
 %s - Commit message
 </pre>
+
+## Lab - Understanding Git Diff
+
+Finding changes done on unstaged files
+```
+git diff
+```
+
+Finding changes that will go in the next commit
+```
+git diff --staged
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git diff
+jegan@tektutor.org:~/git-demo$ ls
+cars.txt  file2.txt  file3.txt
+jegan@tektutor.org:~/git-demo$ vim cars.txt
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   cars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jegan@tektutor.org:~/git-demo$ git diff
+diff --git a/cars.txt b/cars.txt
+index dffa255..c2af84c 100644
+--- a/cars.txt
++++ b/cars.txt
+@@ -1 +1,2 @@
+ BMW X3
++Audi A6
+jegan@tektutor.org:~/git-demo$ git add cars.txt 
+    
+jegan@tektutor.org:~/git-demo$ git diff --staged
+diff --git a/cars.txt b/cars.txt
+index dffa255..c2af84c 100644
+--- a/cars.txt
++++ b/cars.txt
+@@ -1 +1,2 @@
+ BMW X3
++Audi A6
+</pre>

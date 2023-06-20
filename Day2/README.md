@@ -19,6 +19,11 @@ git log --pretty=short
 git log --pretty=full
 git log --pretty=fuller
 git log --pretty=format:"%h - %an %ar %s"
+
+git log --pretty=format:"%h %s" --graph
+git log --since=2.weeks
+git log --path path-of-the-file
+git log --oneline --decorate
 ```
 
 The possible specifiers

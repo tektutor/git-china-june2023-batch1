@@ -207,3 +207,56 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 0c339fa Added Car 1
 232db7f Initial commit.
 </pre>
+
+## ⛹️‍♀️ Lab - Git describe
+```
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> main, tag: v0.3) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+jegan@tektutor.org:~/git-demo$ git tag
+v0.1
+v0.2
+v0.3
+	
+jegan@tektutor.org:~/git-demo$ git describe v0.1
+v0.1
+	
+jegan@tektutor.org:~/git-demo$ git describe -h
+usage: git describe [<options>] [<commit-ish>...]
+   or: git describe [<options>] --dirty
+
+    --contains            find the tag that comes after the commit
+    --debug               debug search strategy on stderr
+    --all                 use any ref
+    --tags                use any tag, even unannotated
+    --long                always use long format
+    --first-parent        only follow first parent
+    --abbrev[=<n>]        use <n> digits to display object names
+    --exact-match         only output exact matches
+    --candidates <n>      consider <n> most recent tags (default: 10)
+    --match <pattern>     only consider tags matching <pattern>
+    --exclude <pattern>   do not consider tags matching <pattern>
+    --always              show abbreviated commit object as fallback
+    --dirty[=<mark>]      append <mark> on dirty working tree (default: "-dirty")
+    --broken[=<mark>]     append <mark> on broken working tree (default: "-broken")
+
+jegan@tektutor.org:~/git-demo$ git describe --all --exact-match v0.1
+tags/v0.1
+jegan@tektutor.org:~/git-demo$ git describe --all --exact-match v0.3
+tags/v0.3
+jegan@tektutor.org:~/git-demo$ git describe --all --exact-match v0.2
+tags/v0.2
+	    
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> main, tag: v0.3) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+	    
+jegan@tektutor.org:~/git-demo$ git describe --contains 0c339fa
+v0.2^0	
+</pre>

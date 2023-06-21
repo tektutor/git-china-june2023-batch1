@@ -21,3 +21,97 @@ Supports two types of Resets
 2. Hard - will discard the code changes done in a commit but also removes the changes in the local file system and staging area
 
 
+## Git soft reset
+```
+cd ~/git-demo
+rm -rf .git
+rm *
+git init
+touch cars.txt
+git add cars.txt
+git commit -m "Initial commit"
+
+echo "Car 1" > cars.txt
+git commit -am "Added Car 1"
+
+echo "Car 2" >> cars.txt
+git commit -am "Added Car 2"
+
+echo "Car 3" >> cars.txt
+git commit -am "Added Car 3"
+
+echo "Car 4" >> cars.txt
+git commit -am "Added Car 4"
+
+echo "Car 5" >> cars.txt
+git commit -am "Added Car 5"
+
+git log --oneline
+
+git reset --soft 
+
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git log --oneline
+ac2cac5 (HEAD -> main) Added Car 5
+f1c9eff Added Car 4
+ea4fd61 Added Car 3
+1714c98 Added Car 2
+0c339fa Added Car 1
+232db7f Initial commit.
+jegan@tektutor.org:~/git-demo$ cat cars.txt 
+Car 1
+Car 2
+Car 3
+Car 4
+Car 5
+jegan@tektutor.org:~/git-demo$ git reset --soft f1c9eff
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   cars.txt
+
+jegan@tektutor.org:~/git-demo$ cat cars.txt 
+Car 1
+Car 2
+Car 3
+Car 4
+Car 5
+jegan@tektutor.org:~/git-demo$ git restore --staged cars.txt
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   cars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")  
+</pre>
+
+## Git hard reset
+```
+git log --oneline
+git reset --hard 1714c98
+git log --oneline
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git log --oneline
+f1c9eff (HEAD -> main) Added Car 4
+ea4fd61 Added Car 3
+1714c98 Added Car 2
+0c339fa Added Car 1
+232db7f Initial commit.
+
+jegan@tektutor.org:~/git-demo$ git reset --hard 1714c98            
+HEAD is now at 1714c98 Added Car 2
+
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> main) Added Car 2
+0c339fa Added Car 1
+232db7f Initial commit.
+</pre>

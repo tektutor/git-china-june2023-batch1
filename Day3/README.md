@@ -271,3 +271,81 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 jegan@tektutor.org:~/git-demo$ git describe --contains 0c339fa
 v0.2^0	
 </pre>
+
+## Git Branches
+
+Branches are lightweight operation in case of Git, GitHub, etc.,
+
+Generally, other Version Control software make a complete copy of the source branch to the destination.  Hence, it is not an overhead in terms of storage use but also might be time consuming operation in other version control tools.
+
+In Git, branches just creates a pointer and doesn't really make a copy of the source branch to the destination branch.  Hence it is lightwight and quicker.
+
+Generally branches are created
+- perform development activities by the team
+- release branches for each release
+- hotfix branch
+- patch branch
+- private branch
+- feature branch, etc.,
+
+Branching for above reasons are considered as a best practice.
+
+## List the branches and finding the current active branch
+
+The branch that has a "*" is the one that is active.
+
+```
+cd ~/git-demo
+git branch  # Will list all branches in the repo
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ ls
+cars.txt
+jegan@tektutor.org:~/git-demo$ git branch
+* main
+</pre>
+
+## Lab - Creating a new branch and navigating to it
+```
+git checkout -b dev-1.0
+```
+
+<pre>
+jegan@tektutor.org:~/git-demo$ git checkout -b dev-1.0
+Switched to a new branch 'dev-1.0'
+jegan@tektutor.org:~/git-demo$ git checkout -b dev-1.0  #Second it reports an error as the dev-1.0 is already created
+fatal: A branch named 'dev-1.0' already exists.
+jegan@tektutor.org:~/git-demo$ git branch
+* dev-1.0
+  main
+jegan@tektutor.org:~/git-demo$ ls
+cars.txt
+jegan@tektutor.org:~/git-demo$ cat cars.txt 
+Car 1
+Car 2
+jegan@tektutor.org:~/git-demo$ git log
+commit 1714c98ed5dded4a1c2e153ddc37b9eb985736b7 (HEAD -> dev-1.0, tag: v0.3, main)
+Author: Jeganathan Swaminathan <jegan@tektutor.org>
+Date:   Wed Jun 21 11:10:27 2023 +0530
+
+    Added Car 2
+
+commit 0c339fa452210963259153141477f65c881c6e48 (tag: v0.2)
+Author: Jeganathan Swaminathan <jegan@tektutor.org>
+Date:   Wed Jun 21 11:10:16 2023 +0530
+
+    Added Car 1
+
+commit 232db7ff19dfdd49ea0723ff475659199e69d2dc (tag: v0.1)
+Author: Jeganathan Swaminathan <jegan@tektutor.org>
+Date:   Wed Jun 21 11:09:58 2023 +0530
+
+    Initial commit.
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> dev-1.0, tag: v0.3, main) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+</pre>
+

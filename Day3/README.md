@@ -381,3 +381,30 @@ jegan@tektutor.org:~/git-demo$ git branch
 * dev-1.0
   main
 </pre>
+]
+
+## Renaming your git branch
+```
+git branch -m main master
+
+git branch
+
+git branch -m master main
+
+git branch
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git branch -m main master
+	
+jegan@tektutor.org:~/git-demo$ git branch
+* dev-1.0
+  master
+	
+jegan@tektutor.org:~/git-demo$ git branch -m master main
+	
+jegan@tektutor.org:~/git-demo$ git branch
+* dev-1.0
+  main
+</pre>

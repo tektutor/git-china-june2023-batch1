@@ -290,7 +290,7 @@ Generally branches are created
 
 Branching for above reasons are considered as a best practice.
 
-## List the branches and finding the current active branch
+## ⛹️‍♀️ Lab - List the branches and finding the current active branch
 
 The branch that has a "*" is the one that is active.
 
@@ -307,7 +307,7 @@ jegan@tektutor.org:~/git-demo$ git branch
 * main
 </pre>
 
-## Lab - Creating a new branch and navigating to it
+## ⛹️‍♀️ Lab - Creating a new branch and navigating to it
 ```
 git checkout -b dev-1.0
 ```

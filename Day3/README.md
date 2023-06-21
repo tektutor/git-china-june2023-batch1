@@ -497,7 +497,7 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 232db7f (tag: v0.1) Initial commit.
 </pre>
 
-## Understanding - Fast-Forward git merge
+## ⛹️‍♀️ Lab - Understanding - Fast-Forward git merge
 ```
 git checkout dev-1.0
 ls

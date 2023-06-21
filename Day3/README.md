@@ -121,3 +121,19 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 0c339fa Added Car 1
 232db7f Initial commit.
 </pre>
+
+## Git restore vs Git reset
+
+#### Git restore
+- will preserve the past commit history
+- the code that you wanted to discard will removed and then committed as a new commit on top of existing commit id
+- hence this is considered safer
+- the only drawback is, it requires an additional commit to undo the changes
+
+#### Git reset
+- will modify the past commit history
+- once the reset is done, we will permanently lose the code changes
+- the drawback is, you will lose the commit history
+- the advantage is, it looks neat as no one will see the faulty commits
+
+In general, use of restore is recommended over the reset.  But using reset is recommended in case the code that is reset isn't published yet to the Git remote repo ( ie - GitHub or similar remote repo )

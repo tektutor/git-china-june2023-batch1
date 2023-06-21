@@ -178,3 +178,32 @@ v0.1
 v0.2
 v0.3
 </pre>
+
+## Lab - Deleting tags
+```
+git log --oneline
+
+git tag -d v0.1
+git tag -d v0.2
+git tag -d v0.3
+
+git log --oneline
+
+git tag
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git tag -d v0.1
+Deleted tag 'v0.1' (was 232db7f)
+jegan@tektutor.org:~/git-demo$ git tag -d v0.2
+Deleted tag 'v0.2' (was 0c339fa)
+jegan@tektutor.org:~/git-demo$ git tag -d v0.3
+Deleted tag 'v0.3' (was 1714c98)
+jegan@tektutor.org:~/git-demo$ git tag
+
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> main) Added Car 2
+0c339fa Added Car 1
+232db7f Initial commit.
+</pre>

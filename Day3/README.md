@@ -410,3 +410,67 @@ jegan@tektutor.org:~/git-demo$ git branch
 * dev-1.0
   main
 </pre>
+
+
+## Committing a new file in dev branch and observing the difference between main and dev branch
+```
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git branch
+* dev-1.0
+  main
+jegan@tektutor.org:~/git-demo$ ls
+cars.txt
+	
+jegan@tektutor.org:~/git-demo$ cat cars.txt 
+Car 1
+Car 2
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> dev-1.0, tag: v0.3, main) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+jegan@tektutor.org:~/git-demo$ touch mobiles.txt
+jegan@tektutor.org:~/git-demo$ git add mobiles.txt 
+jegan@tektutor.org:~/git-demo$ git commit -m "Added mobiles.txt in dev-1.0 branch"
+	
+[dev-1.0 76b333d] Added mobiles.txt in dev-1.0 branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 mobiles.txt
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+76b333d (HEAD -> dev-1.0) Added mobiles.txt in dev-1.0 branch
+1714c98 (tag: v0.3, main) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+jegan@tektutor.org:~/git-demo$ git branch
+* dev-1.0
+  main
+jegan@tektutor.org:~/git-demo$ ls
+cars.txt  mobiles.txt
+jegan@tektutor.org:~/git-demo$ git checkout main
+Switched to branch 'main'
+jegan@tektutor.org:~/git-demo$ ls 
+cars.txt
+jegan@tektutor.org:~/git-demo$ git checkout dev-1.0
+Switched to branch 'dev-1.0'
+	
+jegan@tektutor.org:~/git-demo$ ls 
+cars.txt  mobiles.txt
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+76b333d (HEAD -> dev-1.0) Added mobiles.txt in dev-1.0 branch
+1714c98 (tag: v0.3, main) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+	
+jegan@tektutor.org:~/git-demo$ git checkout main
+Switched to branch 'main'
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> main, tag: v0.3) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+</pre>

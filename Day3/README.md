@@ -210,6 +210,17 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 
 ## ⛹️‍♀️ Lab - Git describe
 ```
+git log --oneline
+
+git tag
+
+git describe v0.1
+
+git describe --all --exact-match v0.1
+git describe --all --exact-match v0.2
+git describe --all --exact-match v0.3
+
+git describe --contains 0c339fa # Find the tag that comes after this commit id
 ```
 
 Expected output

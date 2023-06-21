@@ -96,7 +96,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ## Git hard reset
 
-Unlike the soft reset, the hard reset will remove the recent commit and remove those changes from staging area and the file system.
+Unlike the soft reset, the hard reset will remove from code repo and remove those changes from staging area and the file system.
 
 ```
 git log --oneline

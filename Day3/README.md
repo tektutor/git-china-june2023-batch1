@@ -100,7 +100,7 @@ Unlike the soft reset, the hard reset will remove from code repo and remove thos
 
 ```
 git log --oneline
-git reset --hard 1714c98
+git reset --hard 1714c98  # All code commits after this commit id will be removed permanently
 git log --oneline
 ```
 

@@ -351,3 +351,33 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 232db7f (tag: v0.1) Initial commit.
 </pre>
 
+## ⛹️‍♀️ Lab - Switching between branches
+```
+git branch
+git checkout main
+git branch
+
+git checkout dev-1.0
+git branch
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git branch
+* dev-1.0
+  main
+	
+jegan@tektutor.org:~/git-demo$ git checkout main
+Switched to branch 'main'
+	
+jegan@tektutor.org:~/git-demo$ git branch
+  dev-1.0
+* main
+	
+jegan@tektutor.org:~/git-demo$ git checkout dev-1.0
+Switched to branch 'dev-1.0'
+
+jegan@tektutor.org:~/git-demo$ git branch
+* dev-1.0
+  main
+</pre>

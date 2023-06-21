@@ -308,6 +308,8 @@ jegan@tektutor.org:~/git-demo$ git branch
 </pre>
 
 ## ⛹️‍♀️ Lab - Creating a new branch and navigating to it
+
+The new branch preserves the logs and commit history performed in the source branch, in my case it preseves the main branch logs and commit history in the new dev-1.0 branch.
 ```
 git checkout -b dev-1.0
 ```

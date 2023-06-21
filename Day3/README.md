@@ -21,7 +21,7 @@ Supports two types of Resets
 2. Hard - will discard the code changes done in a commit but also removes the changes in the local file system and staging area
 
 
-## Git soft reset
+## ⛹️‍♀️ Lab - Git soft reset
 The soft reset will remove the changes done in the code repo but retains those code changes in the staging area. Both soft and hard resets will modify the commit history in the code repository, hence commit that was reset is lost permanently. This is not recommended in case the code is already pushed to GitHub or similar code repository, as other developers might depend on those changes.
 
 The alternate to reset is using restore.
@@ -94,7 +94,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")  
 </pre>
 
-## Git hard reset
+## ⛹️‍♀️ Lab - Git hard reset
 
 Unlike the soft reset, the hard reset will remove from code repo and remove those changes from staging area and the file system.
 
@@ -144,7 +144,7 @@ Git supports two types of tags
 1. Lightwight tags - this will not require additional objects stored in .git folder, hence this is lightweight
 2. Annotated tags - this will create a separate object for tags, but this is recommended
 
-## Creating lightweight tags in Git
+## ⛹️‍♀️ Lab - Creating lightweight tags in Git
 ```
 cd ~/git-demo
 git log --oneline
@@ -178,4 +178,3 @@ v0.1
 v0.2
 v0.3
 </pre>
-

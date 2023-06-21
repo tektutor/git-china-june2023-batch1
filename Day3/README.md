@@ -22,6 +22,9 @@ Supports two types of Resets
 
 
 ## Git soft reset
+The soft reset will remove the changes done in the code repo but retains those code changes in the staging area. Both soft and hard resets will modify the commit history in the code repository, hence commit that was reset is lost permanently. This is not recommended in case the code is already pushed to GitHub or similar code repository, as other developers might depend on those changes.
+
+The alternate to reset is using restore.
 ```
 cd ~/git-demo
 rm -rf .git
@@ -92,6 +95,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 </pre>
 
 ## Git hard reset
+
+Unlike the soft reset, the hard reset will remove the recent commit and remove those changes from staging area and the file system.
+
 ```
 git log --oneline
 git reset --hard 1714c98

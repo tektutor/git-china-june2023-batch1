@@ -383,7 +383,9 @@ jegan@tektutor.org:~/git-demo$ git branch
 </pre>
 ]
 
-## Renaming your git branch
+## ⛹️‍♀️ Lab - Renaming your git branch
+Git move i.e rename doesn't require commit. The switch -m in the below command indicates move i.e rename
+
 ```
 git branch -m main master
 

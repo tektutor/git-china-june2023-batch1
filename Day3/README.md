@@ -138,8 +138,44 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 
 In general, use of restore is recommended over the reset.  But using reset is recommended in case the code that is reset isn't published yet to the Git remote repo ( ie - GitHub or similar remote repo )
 
-## Lab - Git Tags
+## Git Tags
 
 Git supports two types of tags
 1. Lightwight tags - this will not require additional objects stored in .git folder, hence this is lightweight
 2. Annotated tags - this will create a separate object for tags, but this is recommended
+
+## Creating lightweight tags in Git
+```
+cd ~/git-demo
+git log --oneline
+
+git tag v0.1 232db7f
+git tag v0.2 0c339fa
+git tag v0.3 1714c98
+
+git log --oneline
+git tag
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> main) Added Car 2
+0c339fa Added Car 1
+232db7f Initial commit.
+	
+jegan@tektutor.org:~/git-demo$ git tag v0.1 232db7f
+jegan@tektutor.org:~/git-demo$ git tag v0.2 0c339fa
+jegan@tektutor.org:~/git-demo$ git tag v0.3 1714c98
+
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> main, tag: v0.3) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+	
+jegan@tektutor.org:~/git-demo$ git tag
+v0.1
+v0.2
+v0.3
+</pre>
+

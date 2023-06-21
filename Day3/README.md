@@ -137,3 +137,9 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 - the advantage is, it looks neat as no one will see the faulty commits
 
 In general, use of restore is recommended over the reset.  But using reset is recommended in case the code that is reset isn't published yet to the Git remote repo ( ie - GitHub or similar remote repo )
+
+## Lab - Git Tags
+
+Git supports two types of tags
+1. Lightwight tags - this will not require additional objects stored in .git folder, hence this is lightweight
+2. Annotated tags - this will create a separate object for tags, but this is recommended

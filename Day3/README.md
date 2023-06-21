@@ -179,7 +179,7 @@ v0.2
 v0.3
 </pre>
 
-## Lab - Deleting tags
+## ⛹️‍♀️ Lab - Deleting tags
 ```
 git log --oneline
 

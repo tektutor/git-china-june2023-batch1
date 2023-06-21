@@ -496,3 +496,65 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 0c339fa (tag: v0.2) Added Car 1
 232db7f (tag: v0.1) Initial commit.
 </pre>
+
+## Understanding - Fast-Forward git merge
+```
+git checkout dev-1.0
+ls
+cat mobiles.txt
+echo "IPhone 6S" > mobiles.txt
+git commit -am "Added IPhone 6S to mobiles.txt in dev-1.0 branch"
+
+echo "IPhone 11 Pro" >> mobiles.txt
+git commit -am "Added IPhone 11 Pro to mobiles.txt in dev-1.0 branch"
+
+git log --oneline
+
+git checkout main
+git log --oneline
+
+git merge dev-1.0 # This will bring all delta changes done in dev-1.0 to the main branch
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ git checkout dev-1.0
+Switched to branch 'dev-1.0'
+	
+jegan@tektutor.org:~/git-demo$ ls
+cars.txt  mobiles.txt
+jegan@tektutor.org:~/git-demo$ cat mobiles.txt 
+	
+jegan@tektutor.org:~/git-demo$ echo "IPhone 6S" > mobiles.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Added IPhone 6S to mobiles.txt in dev-1.0 branch"
+[dev-1.0 a8936ef] Added IPhone 6S to mobiles.txt in dev-1.0 branch
+ 1 file changed, 1 insertion(+)
+	
+jegan@tektutor.org:~/git-demo$ echo "IPhone 11 Pro" >> mobiles.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Added IPhone 11 Pro to mobiles.txt in dev-1.0 branch"
+[dev-1.0 4c9080a] Added IPhone 11 Pro to mobiles.txt in dev-1.0 branch
+ 1 file changed, 1 insertion(+)
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+4c9080a (HEAD -> dev-1.0) Added IPhone 11 Pro to mobiles.txt in dev-1.0 branch
+a8936ef Added IPhone 6S to mobiles.txt in dev-1.0 branch
+76b333d Added mobiles.txt in dev-1.0 branch
+1714c98 (tag: v0.3, main) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+	
+jegan@tektutor.org:~/git-demo$ git checkout main
+Switched to branch 'main'
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+1714c98 (HEAD -> main, tag: v0.3) Added Car 2
+0c339fa (tag: v0.2) Added Car 1
+232db7f (tag: v0.1) Initial commit.
+	
+jegan@tektutor.org:~/git-demo$ git merge dev-1.0
+Updating 1714c98..4c9080a
+Fast-forward
+ mobiles.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 mobiles.txt
+</pre>

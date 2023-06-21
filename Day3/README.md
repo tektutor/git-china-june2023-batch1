@@ -149,12 +149,12 @@ Git supports two types of tags
 cd ~/git-demo
 git log --oneline
 
-git tag v0.1 232db7f
-git tag v0.2 0c339fa
-git tag v0.3 1714c98
+git tag v0.1 232db7f  # Creates a lightweight tag
+git tag v0.2 0c339fa  # Creates a lightweight tag
+git tag v0.3 1714c98  # Creates a lightweight tag
 
 git log --oneline
-git tag
+git tag # List the tags
 ```
 
 Expected output

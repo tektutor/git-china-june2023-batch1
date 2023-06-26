@@ -65,7 +65,34 @@ git checkout main
 git merge dev-1.0
 git log --oneline
 cat file1.txt
+```
 
+## Lab - Merging changes that involve merge conflicts
+```
+git branch main
+touch file2.txt
+echo "Line 1" > file2.txt
+git commit -m "Added file2.txt in main branch"
+
+echo "Hotfix123" >> file1.txt
+git commit -am "Hotfix123 done in main branch"
+
+
+git checkout dev-1.0
+echo "ENH12345" > file1.txt
+git commit -am "Implemented ENH12345 in dev-1.0 branch"
+git log --oneline
+
+git checkout main
+git merge dev-1.0
+```
+
+Now edit the file1.txt and resolve the conflicts manually accepting changes from both main and dev-1.0 branch. Once the manually the merge conflicts are resolved, you need to commit the changes
+```
+git commit -am "Resolved merge conflicts in main branch"
+git log --oneline
+cat file1.txt
+cat file2.txt
 ```
 
 

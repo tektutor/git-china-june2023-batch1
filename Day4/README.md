@@ -95,5 +95,116 @@ cat file1.txt
 cat file2.txt
 ```
 
+## Lab - Git rebase ( an alternate for git merge )
+```
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/git-demo$ touch file1.txt
+jegan@tektutor.org:~/git-demo$ git init
+Initialized empty Git repository in /home/jegan/git-demo/.git/
+jegan@tektutor.org:~/git-demo$ echo "M1" > file1.txt 
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+jegan@tektutor.org:~/git-demo$ git add file1.txt 
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+jegan@tektutor.org:~/git-demo$ git commit -m "Added M1"
+[main (root-commit) a9c5a12] Added M1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+nothing to commit, working tree clean
+jegan@tektutor.org:~/git-demo$ git log --oneline
+a9c5a12 (HEAD -> main) Added M1
+jegan@tektutor.org:~/git-demo$ echo "M2" >> file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Added M2"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[main 534dea8] Added M2
+ 1 file changed, 1 insertion(+)
+jegan@tektutor.org:~/git-demo$ echo "M3" >> file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Added M3"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[main a779cfb] Added M3
+ 1 file changed, 1 insertion(+)
+jegan@tektutor.org:~/git-demo$ git log --oneline
+a779cfb (HEAD -> main) Added M3
+534dea8 Added M2
+a9c5a12 Added M1
+jegan@tektutor.org:~/git-demo$ git checkout -b dev-1.0
+Switched to a new branch 'dev-1.0'
+jegan@tektutor.org:~/git-demo$ echo "D1" > file1.txt 
+jegan@tektutor.org:~/git-demo$ ls
+file1.txt
+jegan@tektutor.org:~/git-demo$ git status
+On branch dev-1.0
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jegan@tektutor.org:~/git-demo$ git restore file1.txt
+jegan@tektutor.org:~/git-demo$ ls
+file1.txt
+jegan@tektutor.org:~/git-demo$ cat file1.txt 
+M1
+M2
+M3
+    
+jegan@tektutor.org:~/git-demo$ echo "D1" >> file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Added D1 in dev-1.0 branch"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[dev-1.0 5880a26] Added D1 in dev-1.0 branch
+ 1 file changed, 1 insertion(+)
+    
+jegan@tektutor.org:~/git-demo$ echo "D2" >> file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Added D2 in dev-1.0 branch"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[dev-1.0 4b3af65] Added D2 in dev-1.0 branch
+ 1 file changed, 1 insertion(+)
+    
+jegan@tektutor.org:~/git-demo$ git status
+On branch dev-1.0
+nothing to commit, working tree clean
+    
+jegan@tektutor.org:~/git-demo$ git log --oneline
+4b3af65 (HEAD -> dev-1.0) Added D2 in dev-1.0 branch
+5880a26 Added D1 in dev-1.0 branch
+a779cfb (main) Added M3
+534dea8 Added M2
+a9c5a12 Added M1
+    
+jegan@tektutor.org:~/git-demo$ git checkout main
+Switched to branch 'main'
+jegan@tektutor.org:~/git-demo$ git log --oneline
+a779cfb (HEAD -> main) Added M3
+534dea8 Added M2
+a9c5a12 Added M1
+    
+jegan@tektutor.org:~/git-demo$ git rebase dev-1.0
+Successfully rebased and updated refs/heads/main.
+    
+jegan@tektutor.org:~/git-demo$ git log --oneline
+4b3af65 (HEAD -> main, dev-1.0) Added D2 in dev-1.0 branch
+5880a26 Added D1 in dev-1.0 branch
+a779cfb Added M3
+534dea8 Added M2
+a9c5a12 Added M1
+</pre>
 
 

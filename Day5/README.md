@@ -285,24 +285,6 @@ Changes not staged for commit:
 	modified:   file1.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
-jegan@tektutor.org:~/git-demo$ git stash --save BUG123
-error: unknown option `save'
-usage: git stash [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
-                 [-u|--include-untracked] [-a|--all] [-m|--message <message>]
-                 [--] [<pathspec>...]]
-
-    -k, --keep-index      keep index
-    -p, --patch           stash in patch mode
-    -q, --quiet           quiet mode
-    -u, --include-untracked
-                          include untracked files in stash
-    -a, --all             include ignore files
-    -m, --message <message>
-                          stash message
-    --pathspec-from-file <file>
-                          read pathspec from file
-    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
-
 jegan@tektutor.org:~/git-demo$ git stash save BUG123
 warning: LF will be replaced by CRLF in file1.txt.
 The file will have its original line endings in your working directory

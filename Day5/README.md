@@ -243,3 +243,113 @@ jegan@tektutor.org:~/git-demo$ git log --oneline
 5800304 Added Line 1
 38f4992 Initial commit.
 </pre>
+
+## Git Stash
+
+- Let's say you are working in a medium priority bug fix. You are half way completed the buge fix.
+- QA team now reported a critical show stopper issue
+- With the help of stash you can temporarily store/park your incomplete code changes in your local repo.  Once you are done with the critical fix, you may r\sume working on the medium poriority issue 
+
+## Lab - Git stash
+<pre>
+jegan@tektutor.org:~/git-demo$ git init
+Initialized empty Git repository in /home/jegan/git-demo/.git/
+jegan@tektutor.org:~/git-demo$ touch file1.txt
+jegan@tektutor.org:~/git-demo$ git add .
+jegan@tektutor.org:~/git-demo$ git commit -m "Initial commit."
+[main (root-commit) 5fffdd4] Initial commit.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+jegan@tektutor.org:~/git-demo$ vim file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Implemented new feature 1"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[main b1a46c4] Implemented new feature 1
+ 1 file changed, 1 insertion(+)
+jegan@tektutor.org:~/git-demo$ vim file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Implemented new feature 2"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[main f17dad8] Implemented new feature 2
+ 1 file changed, 1 insertion(+)
+jegan@tektutor.org:~/git-demo$ git log --oneline
+f17dad8 (HEAD -> main) Implemented new feature 2
+b1a46c4 Implemented new feature 1
+5fffdd4 Initial commit.
+jegan@tektutor.org:~/git-demo$ vim file1.txt 
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jegan@tektutor.org:~/git-demo$ git stash --save BUG123
+error: unknown option `save'
+usage: git stash [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+                 [-u|--include-untracked] [-a|--all] [-m|--message <message>]
+                 [--] [<pathspec>...]]
+
+    -k, --keep-index      keep index
+    -p, --patch           stash in patch mode
+    -q, --quiet           quiet mode
+    -u, --include-untracked
+                          include untracked files in stash
+    -a, --all             include ignore files
+    -m, --message <message>
+                          stash message
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+jegan@tektutor.org:~/git-demo$ git stash save BUG123
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+Saved working directory and index state On main: BUG123
+jegan@tektutor.org:~/git-demo$ git stash list
+stash@{0}: On main: BUG123
+jegan@tektutor.org:~/git-demo$ ls
+file1.txt
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+nothing to commit, working tree clean
+jegan@tektutor.org:~/git-demo$ vim file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Fixed critical show-stopper issue BUG4354"
+[main b3dae7e] Fixed critical show-stopper issue BUG4354
+ 1 file changed, 1 insertion(+)
+jegan@tektutor.org:~/git-demo$ git log --oneline
+b3dae7e (HEAD -> main) Fixed critical show-stopper issue BUG4354
+f17dad8 Implemented new feature 2
+b1a46c4 Implemented new feature 1
+5fffdd4 Initial commit.
+jegan@tektutor.org:~/git-demo$ git stash list
+stash@{0}: On main: BUG123
+jegan@tektutor.org:~/git-demo$ git stash pop
+Auto-merging file1.txt
+CONFLICT (content): Merge conflict in file1.txt
+The stash entry is kept in case you need it again.
+jegan@tektutor.org:~/git-demo$ vim file1.txt 
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+	both modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jegan@tektutor.org:~/git-demo$ vim file1.txt 
+jegan@tektutor.org:~/git-demo$ git add .
+jegan@tektutor.org:~/git-demo$ git commit -m "Fixed medium priority issue BUG56456"
+[main 5d0fb6d] Fixed medium priority issue BUG56456
+ 1 file changed, 3 insertions(+)
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+nothing to commit, working tree clean
+jegan@tektutor.org:~/git-demo$ git log --oneline
+5d0fb6d (HEAD -> main) Fixed medium priority issue BUG56456
+b3dae7e Fixed critical show-stopper issue BUG4354
+f17dad8 Implemented new feature 2
+b1a46c4 Implemented new feature 1
+5fffdd4 Initial commit.	
+</pre>

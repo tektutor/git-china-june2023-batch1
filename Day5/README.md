@@ -58,3 +58,11 @@ https://github.com/tektutor/github-demo-june2023-china/pull/new/ENH734234
 </pre>
 
 Now other team members can go the gd training GitHub repo and try to approve the pull-request. Post the approval, you will be able to merge your feature branch changes to the main branch.
+
+
+## What is a git patch?
+- In earlier version of GitHub, the pull-request feature was not supported
+- Hence, the only way someone can share their code changes for code-review to other team members was by using git patch
+- Apart from code review, git patch also helps people email their code changes to fellow senior team members in case they don't have code commit access permission
+- is a text file, hence sharing via email is pretty easy
+- even today, some opensource projects still use git patch for code reviews

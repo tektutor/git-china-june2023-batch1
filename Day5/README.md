@@ -13,6 +13,9 @@ git init
 touch file1.txt
 git add .
 git commit -m "Initial commit"
+git remote add origin https://github.com/tektutor/github-demo-june2023-china.git #You need to replace this with your gd training github repo url
+
+git remote -v
 
 echo "Line 1" > file1.txt
 git commit -am "Implemented Enhancement ENH12345"
@@ -54,3 +57,4 @@ Now open the URL below to create the pull-request in the GitHub repo
 https://github.com/tektutor/github-demo-june2023-china/pull/new/ENH734234
 </pre>
 
+Now other team members can go the gd training GitHub repo and try to approve the pull-request. Post the approval, you will be able to merge your feature branch changes to the main branch.

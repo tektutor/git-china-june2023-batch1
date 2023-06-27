@@ -66,3 +66,85 @@ Now other team members can go the gd training GitHub repo and try to approve the
 - Apart from code review, git patch also helps people email their code changes to fellow senior team members in case they don't have code commit access permission
 - is a text file, hence sharing via email is pretty easy
 - even today, some opensource projects still use git patch for code reviews
+
+## Lab - Creating a patch and apply the patch onto some branch
+<pre>
+jegan@tektutor.org:~/git-demo$ git diff c7056c9 9a85f23 > hotfix123.patch
+  
+jegan@tektutor.org:~/git-demo$ cat hotfix123.patch 
+diff --git a/file1.txt b/file1.txt
+index 6ad36e5..21a27d8 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,3 +1,4 @@
+ Line 1
+ Line 2
+ Line 3
++Hotfix123
+  
+jegan@tektutor.org:~/git-demo$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+  
+jegan@tektutor.org:~/git-demo$ git checkout -b fix123
+Switched to a new branch 'fix123'
+  
+jegan@tektutor.org:~/git-demo$ cat file1.txt 
+Line 1
+Line 2
+Line 3
+  
+jegan@tektutor.org:~/git-demo$ cat hotfix123.patch 
+diff --git a/file1.txt b/file1.txt
+index 6ad36e5..21a27d8 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,3 +1,4 @@
+ Line 1
+ Line 2
+ Line 3
++Hotfix123
+  
+jegan@tektutor.org:~/git-demo$ git apply -v hotfix123.patch
+Checking patch file1.txt...
+Applied patch file1.txt cleanly.
+  
+jegan@tektutor.org:~/git-demo$ vim hotfix123.patch 
+jegan@tektutor.org:~/git-demo$ cat file1.txt 
+Line 1
+Line 2
+Line 3
+Hotfix123  
+
+jegan@tektutor.org:~/git-demo$ git status
+On branch fix123
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	hotfix123.patch
+
+no changes added to commit (use "git add" and/or "git commit -a")
+    
+jegan@tektutor.org:~/git-demo$ cat file1.txt 
+Line 1
+Line 2
+Line 3
+Hotfix123
+    
+jegan@tektutor.org:~/git-demo$ git add file1.txt 
+    
+jegan@tektutor.org:~/git-demo$ git commit -m "Applied fix123 patch on the fix123 branch"
+[fix123 f419c57] Applied fix123 patch on the fix123 branch
+ 1 file changed, 1 insertion(+)
+    
+jegan@tektutor.org:~/git-demo$ git log --oneline
+f419c57 (HEAD -> fix123) Applied fix123 patch on the fix123 branch
+c7056c9 (origin/main, main) Implemented ENH43453453
+dce4cda Implemented ENH4234234
+bad80b4 Implemented ENHC12345
+d16c18b Initial commit.  
+</pre>

@@ -148,3 +148,98 @@ dce4cda Implemented ENH4234234
 bad80b4 Implemented ENHC12345
 d16c18b Initial commit.  
 </pre>
+
+## Lab - Using cherry pick
+<pre>
+jegan@tektutor.org:~/git-demo$ git init
+Initialized empty Git repository in /home/jegan/git-demo/.git/
+jegan@tektutor.org:~/git-demo$ ls -lha
+total 12K
+drwxrwxr-x  3 jegan jegan 4.0K Jun 27 12:59 .
+drwxr-x--- 43 jegan jegan 4.0K Jun 27 12:37 ..
+drwxrwxr-x  7 jegan jegan 4.0K Jun 27 12:59 .git
+	
+jegan@tektutor.org:~/git-demo$ touch file1.txt
+jegan@tektutor.org:~/git-demo$ git add .
+jegan@tektutor.org:~/git-demo$ git commit -m "Initial commit."
+[main (root-commit) 38f4992] Initial commit.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+	
+jegan@tektutor.org:~/git-demo$ echo "Line 1" >> file1.txt
+jegan@tektutor.org:~/git-demo$ git commit -am "Added Line 1"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[main 5800304] Added Line 1
+ 1 file changed, 1 insertion(+)
+jegan@tektutor.org:~/git-demo$ echo "Line 2" >> file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Added Line 2"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[main 872e2c3] Added Line 2
+ 1 file changed, 1 insertion(+)
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+872e2c3 (HEAD -> main) Added Line 2
+5800304 Added Line 1
+38f4992 Initial commit.
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+nothing to commit, working tree clean
+	
+jegan@tektutor.org:~/git-demo$ git checkout -b dev-1.0
+Switched to a new branch 'dev-1.0'
+	
+jegan@tektutor.org:~/git-demo$ ls
+file1.txt
+	
+jegan@tektutor.org:~/git-demo$ cat file1.txt 
+Line 1
+Line 2
+	
+jegan@tektutor.org:~/git-demo$ echo "Line 3" >> file1.txt 
+jegan@tektutor.org:~/git-demo$ git commit -am "Added Line 3 in dev-1.0 branch"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[dev-1.0 5366320] Added Line 3 in dev-1.0 branch
+ 1 file changed, 1 insertion(+)
+	
+jegan@tektutor.org:~/git-demo$ echo "Line 4" >> file1.txt 
+	
+jegan@tektutor.org:~/git-demo$ git commit -am "Added Line 4 in dev-1.0 branch"
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+[dev-1.0 66d6ed7] Added Line 4 in dev-1.0 branch
+ 1 file changed, 1 insertion(+)
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+	
+66d6ed7 (HEAD -> dev-1.0) Added Line 4 in dev-1.0 branch
+5366320 Added Line 3 in dev-1.0 branch
+872e2c3 (main) Added Line 2
+5800304 Added Line 1
+38f4992 Initial commit.
+
+jegan@tektutor.org:~/git-demo$ git checkout main
+Switched to branch 'main'
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+872e2c3 (HEAD -> main) Added Line 2
+5800304 Added Line 1
+38f4992 Initial commit.
+	
+jegan@tektutor.org:~/git-demo$ git cherry-pick 5366320
+[main 0174cbc] Added Line 3 in dev-1.0 branch
+ Date: Tue Jun 27 13:01:42 2023 +0530
+ 1 file changed, 1 insertion(+)
+	
+jegan@tektutor.org:~/git-demo$ git status
+On branch main
+nothing to commit, working tree clean
+	
+jegan@tektutor.org:~/git-demo$ git log --oneline
+0174cbc (HEAD -> main) Added Line 3 in dev-1.0 branch
+872e2c3 Added Line 2
+5800304 Added Line 1
+38f4992 Initial commit.
+</pre>
